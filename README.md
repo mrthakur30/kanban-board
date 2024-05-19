@@ -1,7 +1,5 @@
 Deployment Link : https://kanban-board-git-main-mrthakur30s-projects.vercel.app/
 
-*Read the 2nd page of Challange pdf after completing project so dumped the entire project at once. But I had used git very extensively in my last intern*  
-
 ## Getting Started
 
 To get started with this project, follow these steps:
@@ -19,7 +17,7 @@ npm install
 npm run dev
 
 5. **Open your browser**:
-Visit `http://localhost:3000` to view the app. You should see your React app up and running!
+Visit `http://localhost:3000` 
 
 
 ## Tech Stack Used
