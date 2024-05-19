@@ -15,10 +15,12 @@ const initialState: AuthState = {
     name: 'auth',
     initialState,
     reducers: {
+      
       signup: (state, action: PayloadAction<string>) => {
         state.isAuthenticated = true;
         state.user = action.payload;
       },
+
       logout: (state) => {
         state.isAuthenticated = false;
         state.user = null;

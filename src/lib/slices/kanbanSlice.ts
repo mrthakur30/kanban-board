@@ -69,24 +69,29 @@ const kanbanSlice = createSlice({
   name: 'kanban',
   initialState,
   reducers: {
+    
     addCategory: (state, action: PayloadAction<Category>) => {
       state.categories.push(action.payload);
     },
+    
     deleteCategory: (state, action: PayloadAction<{ categoryId: string }>) => {
       state.categories = state.categories.filter((category) => category.id !== action.payload.categoryId);
     },
+
     addTask: (state, action: PayloadAction<{ categoryId: string; task: Task }>) => {
       const category = state.categories.find((cat) => cat.id === action.payload.categoryId);
       if (category) {
         category.tasks.push(action.payload.task);
       }
     },
+
     deleteTask: (state, action: PayloadAction<{ categoryId: string; taskId: string }>) => {
       const category = state.categories.find((cat) => cat.id === action.payload.categoryId);
       if (category) {
         category.tasks = category.tasks.filter((task) => task.id !== action.payload.taskId);
       }
     },
+
     moveTask: (
       state,
       action: PayloadAction<{ sourceCategoryId: string; destinationCategoryId: string; taskId: string; destinationIndex: number }>
@@ -104,12 +109,14 @@ const kanbanSlice = createSlice({
       sourceCategory.tasks = sourceCategory.tasks.filter((task) => task.id !== taskId);
       destinationCategory.tasks.splice(destinationIndex, 0, task);
     },
+
     editCategoryTitle: (state, action: PayloadAction<{ categoryId: string; newTitle: string }>) => {
       const category = state.categories.find((cat) => cat.id === action.payload.categoryId);
       if (category) {
         category.title = action.payload.newTitle;
       }
     },
+
     editTaskTitle: (state, action: PayloadAction<{ categoryId: string; taskId: string; newTitle: string }>) => {
       const category = state.categories.find((cat) => cat.id === action.payload.categoryId);
       if (category) {
