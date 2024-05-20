@@ -28,6 +28,7 @@ const Login: React.FC = () => {
             <input
               type="email"
               value={email}
+              placeholder='Enter test@gmail.com'
               onChange={(e) => setEmail(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md"
               required
@@ -38,6 +39,7 @@ const Login: React.FC = () => {
             <input
               type="password"
               value={password}
+              placeholder='test'
               onChange={(e) => setPassword(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md"
               required
