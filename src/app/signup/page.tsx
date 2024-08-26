@@ -11,7 +11,7 @@ const Signup = () => {
   const authState = useSelector((state: RootState) => state.auth);
 
   const handleSignup = () => {
-    dispatch(signupAsync({ email, password }));
+    dispatch(signupAsync({ email, password }))
   };
 
   return (
